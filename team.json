@@ -1,0 +1,36 @@
+[
+  {
+    "players": [
+      {
+        "name": "Laylinks",
+        "id": "514212486765871104"
+      },
+      {
+        "name": "Bingerfs",
+        "id": "1"
+      },
+      {
+        "name": "Bingerfs",
+        "id": "88358837286871040"
+      }
+    ],
+    "checkinStatus": "checked in"
+  },
+  {
+    "players": [
+      {
+        "name": "Bingerfs",
+        "id": "3"
+      },
+      {
+        "name": "Bingerfs",
+        "id": "4"
+      },
+      {
+        "name": "Bingerfs",
+        "id": "2"
+      }
+    ],
+    "checkinStatus": "not done"
+  }
+]

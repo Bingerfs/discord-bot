@@ -1,0 +1,6 @@
+projectKey=Bing
+serverUrl=http://localhost:9000
+serverVersion=8.4.2.36762
+dashboardUrl=http://localhost:9000/dashboard?id=Bing
+ceTaskId=AXS2jTiWJ4LNXYTEqp6v
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXS2jTiWJ4LNXYTEqp6v
