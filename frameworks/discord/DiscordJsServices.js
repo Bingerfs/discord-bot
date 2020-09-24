@@ -5,16 +5,16 @@ const { prefix, token } = require('../../config.json');
 
 module.exports = class DiscordJsServices extends DiscordServices {
 
-	constructor() {
+	constructor(dependencies) {
 		super();
 		this.clientDiscord = new Discord.Client();
-		this.dependencies = null;
+		this.dependencies = dependencies;
 		this.setupDiscordClient();
-        this.setupListeners();
+		this.setupListeners();
 	}
 
 	initDiscordConnection() {
-        this.clientDiscord.login(token);
+		this.clientDiscord.login(token);
 	}
 
 	setupDiscordClient() {
@@ -22,8 +22,7 @@ module.exports = class DiscordJsServices extends DiscordServices {
 		const commandFiles = fs.readdirSync('./frameworks/discord/commands').filter(file => file.endsWith('.js'));
 		for(const file of commandFiles) {
 			const makeCommand = require('./commands/' + file);
-            const command = makeCommand({});
-            console.log(command);
+			const command = makeCommand(this.dependencies);
 			this.clientDiscord.commands.set(command.name, command);
 		}
 	}

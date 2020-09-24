@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bot-splatoon",
+  "private_key_id": "7be38d84cacf3ecbe161f57ecf1a41a4a9ea9459",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCXZ9jfvqGlq28Y\n7RxolOK3pNrpn6i511zHJnbcSK/bGj4OmTblZDU7Ey7mh5R7vfuGvtUv236OHS0o\nYQDGNhfzSS6JZHWJmklsAYBkkFCVyGF0OaO7h0S8Yr/+nYcbXxL5o7PvcIoKNRPX\nek+gx5GsvJKnMhWxd0uP1m1fF/mGmRZG438zpoVWXcUxaOsH+xVeiz6XJdle1QyF\n7h+d2S+sQivLpIUeDMmZ+38W1GsAUL9Oyi3d8XOVR78IyIQ6IqcEQ115njoPQI1p\n4pE/vgOJfo+gwZXnlfaaT54lmRvXFNyXeDGwQAJo1MuWw04d1VNQ8jIJTFkghvB/\nbwZrNuK7AgMBAAECggEAA2Kj+EHmJBeEj+jCeBEEu929ReYkyJSyF961zTmLH+v1\nOEJ8Uau6tdLLe3OnCzPVe0XhNNeEe9Gywm4DrX0uAKCmVxX1TfmyhwB9Tqblac48\ninPPMZ5MvKXg40BUTYeWLfTplkLDa2JLJhEvjC5DTjrOBzdv1AWjnYYTXmaYVOrd\nhojD+ixmRhCK5h+Gn5s+To62pRHxiCBvyOeyfEimEFj14JExyLgtvs3EXJnsO3YI\nWjg85+17IAVt0BhMbRNsnbTWLoXAJgQ3FiHhRg/wF3Xh5t2n19xXMjanBKIoHbZQ\nZ5xjzuUanPVakAw51pmvRULmWOQeTE/U1BBQ9GJ5wQKBgQDWEx8nlFB48XY+Tc0M\ny2q2Yf784YuVxheoqNjtpgROfUvQJrC/SiBuyAgaYk3qnjfEvCXtun/uOtpC3/oP\nOrzIpmtvHWG/amDLqBw1pHAPanuL1PqcezcEM1yiBdbpwtVPudzw+7ZnEQ/jHxQ3\nPx/vvwF4XjIsuKdTiTPccQMFwQKBgQC1Dr3mudzD0w+QmyIlPfjrh/sk7xbCKwU1\nNWKR0fKklnGYdehX5K0YEyMez2eYj+xDSrlEg7YRzOKWwn/TQi9aa1D00uuWX/pn\n4x+r8SVSNAFkRnHu3Q8C071fmqFoclZQ3mqAD0Km0ybP46Yf5b4VjOTmxyKmnyGj\nZOqpLMDfewKBgFY8HbCz7jbKDffLH26oArS1hSIZOUF8KsumOLyCw/laP8/5xflI\nwwfdTGZUc06vrYdyw1SgbChrTMDjuLep0aKCZ4S7MUUKdTOU5Mg3FW0gV+RcRxgC\nCoeGqSobcBd6hLM5C+eHflLGbL/xJROcOiE5sD3stAmP2NetzVZfr/gBAoGAeGiV\nYhu49YInl8OTsbDFGd4U5zsZp4d0ry4Rn2hANbTXVs0S92DcvGX9tT+5ZXxRY28O\nRsJREwVuq1QuLhCV7UvxSt/6TMcHgI9LQM3eRAzR4B35JyFcGkU2a54qOYvQW3eO\n3BtJ+Cf0Z8y9bfkbsLlCgTdtk+HAPSmf5WId4oECgYEAwhXvY3nR1v45GiegPDWS\nkOWd1kD8IlILmfMfLi9pRuOWxzyh4xHTzTdsfspJXaScc2ukkaGghJrUOK+9DfP0\n3j8xRl/1l0gTu/RGZmnLzz5iDMMAekztH58fEklxn6bwzdqtxCYcpnw1xHrfWpTU\nrtekHgKsgfMI+j1NrPs2ixU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fq84c@bot-splatoon.iam.gserviceaccount.com",
+  "client_id": "116184873959244588758",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fq84c%40bot-splatoon.iam.gserviceaccount.com"
+}

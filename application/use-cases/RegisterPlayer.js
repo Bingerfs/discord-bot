@@ -7,7 +7,7 @@ module.exports = (PlayersRepository) => {
 		if(playerFound) {throw new Error('Player has been already registered');}
 		const playerRegistered = new Player(player);
 		await PlayersRepository.register(playerRegistered);
-		return 'Player regitered successfully';
+		return 'Player registered successfully';
 	};
 
 	return execute;
