@@ -1,10 +1,10 @@
 {
   "type": "service_account",
   "project_id": "bot-splatoon",
-  "private_key_id": "71bd8456204573d95857f35565c9fc6cab52fd80",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDcl49fHzxp8ugn\nS6BlgjQNbICZYEVo5s95f4RYQVC9TVkoDpBr21E3mMywW9tkgcMH++RiO2cDAuif\neVvV5ex1Va6LXRCJlG+hk4FEkzFMNYiFo0gYCOIpz+5c1hNXluIHwxJsYSTwIayB\nnnyYWQhZjHmPrCdOHQybjC4FBiN5rEOKZ6SvJH1SnwzzFiEZV5vZvAjK2c66gyWr\ndzdA13wAKblz/RX4UgHYZUkZcDNUwAA+6cmkSgGEGklDoX3CjZiP7sYEG1GMPGWg\n9P7r6o11vfrOFf8RlmuPVnXKYDPSwkTsuOOyeftzuK4LcE46FrPJvS2Yp8/12ms0\nG7kM1/7tAgMBAAECggEAArIzhWUbVuwqHDjXaAY0Xqmh1L4Rexu/E2wUkQOTWgz0\n9wFekILotjY+4jTtNIhFevaALxcsxiOl9jUEg1PBFRoL/RYRGq1ew+nKnazy4EyT\nM5bwTaLmKL6q2iWfrOViM9gVhI+XZPv0YM0wFqiX6ohGABSJknHWcpw+/764dkc3\n6J9vuq999tuInYu7s35jaCfYFGtIVSXg+jUV2bygN/dtyty6LNaUcP6aqQQvmzCd\nqYFZ8RTdd8FWsuKpM3kiuYhlpw/d5IzlIc37U1wFc2YzFa+VxewNDxZsiFerbHPF\nffjM8Hqv+JgBW5ja/5NT1DQZS4wYbfbcSoq6tNspPQKBgQDzMFr1lfl/XF0FGceh\nLa2ePpCAErbf4CK1lBlHrfSfW/mUPaSSRqrXCBtoaV2EnFts4u5/ekjHTBdIIkEz\n1RUHPDU6GQamw2SYB/8wHY80gILJAkegkq7yTesrbc2thGNC+AteAKnwH3ff9A2P\nOb1b8N9JFJpd1wQHm5CkP9D6dwKBgQDoNnatx+svEZWdZX/1dgW/bga0a6LaQtGJ\nT+qKowiWx3Tvvvf7rtraaQsG127ZG2XmvH8kUBlXbHzyW22vMrd3OcxX/wyxCxFu\nxar6zUmCsPLPZVHl2CECABD3BUG9jt4598fCAnimPtjzSsXzmQOPm4bNTFE1YJUb\n4HJkg4/GuwKBgQCNzvy7iKDcq7dyaf4G9uPvCvyoMkGBeunCiIHVUpL6+l8nGmsF\nAUBN8+RHlml6EtMdQ5dfrqcR0EUjQxZSa0a/2VQQdNd0FyxpmwArxpDjRKz/Gd06\nvU5W7SjdQkJVlIVtX8cBIdH2u+LjLSVbB4hsPKF3tBPv9Jnc9dH6dVwfMQKBgQDT\njys40HcYfvDMYXje7RP3gApjvdy09UNp0oFgpYBhvn5vHpFXn8qMSj9dkFDRRADm\n4r0DHGa6G4EKXPnlMFOuL95YHWo2slrDjRtlPDrI8uWExk6DFRGdfOn347YtOUiF\nj5VS0GWTMJb/sRQAB1wTLiL2T518/+1ZZHdT0/jdmQKBgQDrX6LwKvhE0uhAErRR\n6KA+9Du1xjVE+eQBt3425EMCt3OsbUkhLX+0npzdsNlBfUChppe2ni+/kxtrIBmE\n3lowyzYNac1CjR0ArJc9Zz/YZzA/DwB9Z/vYiNY9ciywRB9KFq2JkUbEbb/p/CvW\nOIZx54et6BOrt2RUn7+c+57KzQ==\n-----END PRIVATE KEY-----\n",
+  "private_key_id": "",
+  "private_key": "",
   "client_email": "firebase-adminsdk-7s8yq@bot-splatoon.iam.gserviceaccount.com",
-  "client_id": "117817141960324465358",
+  "client_id": "",
   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
