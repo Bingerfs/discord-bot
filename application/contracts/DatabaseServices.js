@@ -2,6 +2,7 @@ module.exports = class DatabaseServices {
 
 	constructor() {
 		this.playerRepository = null;
+		this.teamRepository = null;
 	}
 
 	initDatabase() {

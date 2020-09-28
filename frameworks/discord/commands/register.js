@@ -1,4 +1,3 @@
-const fs = require('fs');
 const PlayerController = require('../../../controllers/players/PlayerController');
 
 module.exports = (dependencies) => {

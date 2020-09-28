@@ -8,8 +8,7 @@ module.exports = class DiscordJsServices extends DiscordServices {
 	constructor(dependencies) {
 		super();
 		this.clientDiscord = new Discord.Client();
-		this.dependencies = dependencies;
-		this.setupDiscordClient();
+		this.setupDiscordClient(dependencies);
 		this.setupListeners();
 	}
 
@@ -17,12 +16,12 @@ module.exports = class DiscordJsServices extends DiscordServices {
 		this.clientDiscord.login(token);
 	}
 
-	setupDiscordClient() {
+	setupDiscordClient(dependencies) {
 		this.clientDiscord.commands = new Discord.Collection();
 		const commandFiles = fs.readdirSync('./frameworks/discord/commands').filter(file => file.endsWith('.js'));
 		for(const file of commandFiles) {
 			const makeCommand = require('./commands/' + file);
-			const command = makeCommand(this.dependencies);
+			const command = makeCommand(dependencies);
 			this.clientDiscord.commands.set(command.name, command);
 		}
 	}
@@ -42,7 +41,7 @@ module.exports = class DiscordJsServices extends DiscordServices {
 			}
 			catch (error) {
 				console.error(error);
-				message.reply('Nah');
+				message.reply('Error');
 			}
 		});
 	}

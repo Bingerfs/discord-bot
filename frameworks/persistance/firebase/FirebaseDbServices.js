@@ -2,6 +2,7 @@ const DatabaseServices = require('../../../application/contracts/DatabaseService
 const admin = require('firebase-admin');
 const serviceAccount = require('../../../admin.json');
 const FirebasePlayerRepository = require('./FirebasePlayerRepository');
+const FirebaseTeamRepository = require('./FirebaseTeamRepository');
 
 module.exports = class FirebaseDbServices extends DatabaseServices {
 	constructor() {
@@ -17,6 +18,8 @@ module.exports = class FirebaseDbServices extends DatabaseServices {
 		});
 		const db = admin.firestore();
 		const playersCollectionRef = db.collection('players');
+		const teamsCollectionRef = db.collection('teams');
 		this.playerRepository = new FirebasePlayerRepository(playersCollectionRef);
+		this.teamRepository = new FirebaseTeamRepository(teamsCollectionRef);
 	}
 };

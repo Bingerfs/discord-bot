@@ -1,4 +1,6 @@
 const RegisterPlayer = require('../../application/use-cases/RegisterPlayer');
+const UnregisterPlayer = require('../../application/use-cases/UnregisterPlayer');
+const GetAllRegisteredPlayers = require('../../application/use-cases/GetAllRegisteredPlayers');
 module.exports = (dependencies) => {
 	const { playerRepository } = dependencies.DatabaseServices;
 
@@ -12,7 +14,35 @@ module.exports = (dependencies) => {
 		return res;
 	};
 
+	const deleteRegisteredPlayer = (id) => {
+		const unregisterPlayerCommand = UnregisterPlayer(playerRepository);
+		const res = unregisterPlayerCommand(id).then((response) => {
+			return { message: response };
+		}, (err) => {
+			return { message: err.message };
+		});
+		return res;
+	};
+
+	const getAllRegisteredPlayers = () => {
+		const getAllRegisteredCommand = GetAllRegisteredPlayers(playerRepository);
+		const res = getAllRegisteredCommand().then((response) =>{
+			let message = 'Registered players\n';
+			let playerNumber = 1;
+			response.forEach((value) => {
+				message = message + playerNumber + '. <@' + value.id + '>\n';
+				playerNumber++;
+			});
+			return { message: message };
+		}, (err) => {
+			return { message: err.message };
+		});
+		return res;
+	};
+
 	return{
 		registerNewPlayer,
+		deleteRegisteredPlayer,
+		getAllRegisteredPlayers,
 	};
 };

@@ -25,4 +25,24 @@ module.exports = class FirebasePlayerRepository extends PlayerRepository {
 			throw new Error('Error while searching for player');
 		}
 	}
+
+	async deleteById(id) {
+		try {
+			const res = await this.playerCollectionRef.doc(id).delete();
+			return res;
+		}
+		catch (error) {
+			throw new Error('Error while searching for player');
+		}
+	}
+
+	async getAll() {
+		try {
+			const res = await this.playerCollectionRef.get();
+			return res;
+		}
+		catch (error) {
+			throw new Error('Error while getting all players registered');
+		}
+	}
 } ;
