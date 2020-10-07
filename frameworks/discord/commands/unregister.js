@@ -7,6 +7,7 @@ module.exports = (dependencies) => {
 			const controller = PlayerController(dependencies);
 			controller.deleteRegisteredPlayer(message.author.id).then((res) => {
 				console.log(res);
+				message.client.emit('playersUpdated', message);
 			});
 		},
 	};

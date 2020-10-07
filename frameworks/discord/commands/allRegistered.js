@@ -7,8 +7,12 @@ module.exports = (dependencies) => {
 		description: 'Shows all registered players',
 		execute(message, args) {
 			const controller = PlayerController(dependencies);
-			controller.getAllRegisteredPlayers().then((res) => {
-				message.reply(res.message);
+			const { playersChannel } = require('../../../config.json');
+			const channelPlayers = message.guild.channels.resolve(playersChannel);
+			channelPlayers.messages.fetch(channelPlayers.lastMessageID).then(messagePlayers => {
+				controller.getAllRegisteredPlayers().then((res) => {
+					messagePlayers.edit(res.message);
+				});
 			});
 		},
 	};

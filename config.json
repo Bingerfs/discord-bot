@@ -1,5 +1,7 @@
 {
   "prefix": ">>",
   "token": "",
-  "tourneyStatus": "registration"
+  "tourneyStatus": "registration",
+  "shuffleChannel": "762210152161607750",
+  "playersChannel": "762372347902296092"
 }

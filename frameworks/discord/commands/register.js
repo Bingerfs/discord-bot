@@ -14,6 +14,7 @@ module.exports = (dependencies) => {
 			const controller = PlayerController(dependencies);
 			controller.registerNewPlayer(player).then((res) => {
 				message.reply(res.message);
+				message.client.emit('playersUpdated', message);
 			});
 		},
 	};

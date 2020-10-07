@@ -2,6 +2,7 @@ const DiscordServices = require('../../application/contracts/DiscordServices');
 const Discord = require('discord.js');
 const fs = require('fs');
 const { prefix, token } = require('../../config.json');
+const { runInThisContext } = require('vm');
 
 module.exports = class DiscordJsServices extends DiscordServices {
 
@@ -13,7 +14,8 @@ module.exports = class DiscordJsServices extends DiscordServices {
 	}
 
 	initDiscordConnection() {
-		this.clientDiscord.login(token);
+		console.log(process.env.NODE_ENV);
+		this.clientDiscord.login(process.env.TOKEN);
 	}
 
 	setupDiscordClient(dependencies) {
@@ -34,14 +36,24 @@ module.exports = class DiscordJsServices extends DiscordServices {
 		this.clientDiscord.on('message', message => {
 			if(!message.content.startsWith(prefix) || message.author.bot) {return;}
 			const args = message.content.slice(prefix.length).trim().split(/ +/);
-			const command = args.shift().toLowerCase();
+			const command = args.shift();
 			if(!this.clientDiscord.commands.has(command)) {return;}
 			try {
+				console.log(command);
 				this.clientDiscord.commands.get(command).execute(message, args);
 			}
 			catch (error) {
 				console.error(error);
 				message.reply('Error');
+			}
+		});
+
+		this.clientDiscord.on('playersUpdated', message => {
+			try {
+				this.clientDiscord.commands.get('players').execute(message);
+			}
+			catch (error) {
+				message.reply(error);
 			}
 		});
 	}
