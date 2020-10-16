@@ -12,10 +12,8 @@ module.exports = (DatabaseServices) => {
 		const getAllRegisteredCommand = GetAllRegisteredPlayers(DatabaseServices.playerRepository);
 		const registerTeamCommand = RegisterTeam(DatabaseServices.teamRepository);
 		const playersSnapshot = await getAllRegisteredCommand();
-		if(playersSnapshot.size < 2 * sizeOfTeam)
-			throw new Error('Not enough players registered');
+		if(playersSnapshot.size < 2 * sizeOfTeam) throw new Error('Not enough players registered');
 		const playerDocsArray = playersSnapshot.docs;
-		console.log(playerDocsArray);
 		while(playerDocsArray.length > 0) {
 			let playerIdArray = [];
 			for(let i = 0; i < sizeOfTeam; i++) {
@@ -24,7 +22,7 @@ module.exports = (DatabaseServices) => {
 				playerIdArray.push(playerDocsArray[randomPlayerIndex].id);
 				playerDocsArray.splice(randomPlayerIndex, 1);
 			}
-			await registerTeamCommand({ playersId: playerIdArray });
+			registerTeamCommand({ playersId: playerIdArray, checkInStatus: false });
 			playerIdArray = [];
 		}
 		return 'Teams shuffled successfully';

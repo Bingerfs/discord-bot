@@ -45,4 +45,17 @@ module.exports = class FirebasePlayerRepository extends PlayerRepository {
 			throw new Error('Error while getting all players registered');
 		}
 	}
+
+	async deleteAll() {
+		try {
+			const res = await this.playerCollectionRef.get();
+			res.forEach(player => {
+				player.ref.delete();
+			});
+			return res;
+		}
+		catch (error) {
+			throw new Error('Error while deleting all players');
+		}
+	}
 } ;

@@ -15,4 +15,8 @@ module.exports = class PlayerRepository {
 	getAll() {
 		return Promise.reject(new Error('not implemented'));
 	}
+
+	deleteAll() {
+		return Promise.reject(new Error('no implemented'));
+	}
 };

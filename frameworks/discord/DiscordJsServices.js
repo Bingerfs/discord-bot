@@ -14,7 +14,6 @@ module.exports = class DiscordJsServices extends DiscordServices {
 	}
 
 	initDiscordConnection() {
-		console.log(process.env.NODE_ENV);
 		this.clientDiscord.login(process.env.TOKEN);
 	}
 
@@ -51,6 +50,15 @@ module.exports = class DiscordJsServices extends DiscordServices {
 		this.clientDiscord.on('playersUpdated', message => {
 			try {
 				this.clientDiscord.commands.get('players').execute(message);
+			}
+			catch (error) {
+				message.reply(error);
+			}
+		});
+
+		this.clientDiscord.on('teamsUpdated', message => {
+			try {
+				this.clientDiscord.commands.get('teams').execute(message);
 			}
 			catch (error) {
 				message.reply(error);

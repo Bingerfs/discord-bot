@@ -6,20 +6,16 @@ module.exports = (dependencies) => {
 		name: 'shuffle',
 		description: 'shuffle and make teams',
 		execute(message, args) {
+			const { tourneyStatus } = require('../../../config.json');
+			if(tourneyStatus !== 'check in') return message.reply('The tournament is not in the registration phase');
 			if(!args.length) return message.reply('Size of teams not specified');
 			if(!message.member.roles.cache.some((role) => role.name === 'Dev')) return message.reply('You are not allowed to use this command');
 			const controller = TeamController(dependencies);
-			const { shuffleChannel } = require('../../../config.json');
-			const channelShuffle = message.guild.channels.resolve(shuffleChannel);
-			channelShuffle.messages.fetch(channelShuffle.lastMessageID).then(messageShuffle => {
-				controller.shuffleTeams(args[0]).then((resShuffle)=> {
-					controller.getAllTeams().then((resTeams) => {
-						messageShuffle.edit(resTeams.message);
-					});
-					message.channel.send(resShuffle.message);
-				}, (error) => {
-					message.reply(error.message);
-				});
+			controller.shuffleTeams(args[0]).then((resShuffle)=> {
+				message.channel.send(resShuffle.message);
+				message.client.emit('teamsUpdated', message);
+			}, (error) => {
+				message.reply(error.message);
 			});
 		},
 	};

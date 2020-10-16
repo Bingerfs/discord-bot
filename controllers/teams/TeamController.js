@@ -1,5 +1,7 @@
 const ShuffleTeams = require('../../application/use-cases/ShuffleTeams');
 const GetAllTeams = require('../../application/use-cases/GetAllTeams');
+const DeleteAllTeams = require('../../application/use-cases/DeleteAllTeams');
+const CheckInTeam = require('../../application/use-cases/CheckInTeam');
 
 module.exports = (dependencies) => {
 	const { playerRepository, teamRepository } = dependencies.DatabaseServices;
@@ -21,6 +23,8 @@ module.exports = (dependencies) => {
 			let teamNumber = 1;
 			response.forEach((team) => {
 				message = message + 'Team ' + teamNumber + '\n';
+				const checkInStatus = team.data().checkInStatus;
+				message = message + '- Check in: ' + checkInStatus + '\n';
 				const players = team.data().playersId;
 				const playersMessage = players.reduce((stringPlayers, playerId) => { return stringPlayers + '* <@' + playerId + '>\n'; }, '');
 				message = message + playersMessage;
@@ -33,8 +37,30 @@ module.exports = (dependencies) => {
 		return res;
 	};
 
+	const deleteAllTeamsShuffled = () => {
+		const deleteAllTeamsCommand = DeleteAllTeams(teamRepository);
+		const res = deleteAllTeamsCommand().then((response) =>{
+			return { message: response };
+		}, (err) => {
+			return { message: err.message };
+		});
+		return res;
+	};
+
+	const checkInTeam = (playerId) => {
+		const checkInTeamCommand = CheckInTeam(teamRepository);
+		const res = checkInTeamCommand(playerId).then((response) => {
+			return { message: response };
+		}, (err) => {
+			return { message: err.message };
+		});
+		return res;
+	};
+
 	return{
 		shuffleTeams,
 		getAllTeams,
+		deleteAllTeamsShuffled,
+		checkInTeam,
 	};
 };
