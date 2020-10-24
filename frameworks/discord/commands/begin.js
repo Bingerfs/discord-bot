@@ -12,8 +12,8 @@ module.exports = (dependencies) => {
 			const controllerPlayer = PlayerController(dependencies);
 			const controllerTeam = TeamController(dependencies);
 			controllerPlayer.deleteAllRegisteredPlayers().then(res => {
-				message.reply(res.message);
 				message.client.emit('playersUpdated', message);
+				message.reply(res.message);
 			});
 			controllerTeam.deleteAllTeamsShuffled().then(res => {
 				message.reply(res.message);

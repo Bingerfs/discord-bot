@@ -10,6 +10,7 @@ module.exports = (dependencies) => {
 			const player = {
 				nickname: message.author.username,
 				id: message.author.id,
+				level: 0,
 			};
 			const controller = PlayerController(dependencies);
 			controller.registerNewPlayer(player).then((res) => {

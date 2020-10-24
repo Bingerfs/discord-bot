@@ -19,7 +19,11 @@ module.exports = class FirebaseDbServices extends DatabaseServices {
 		const db = admin.firestore();
 		const playersCollectionRef = db.collection('players');
 		const teamsCollectionRef = db.collection('teams');
+		const substitutesCollectionRef = db.collection('substitutes');
+		const highLevelCollecitonRef = db.collection('leveleds');
 		this.playerRepository = new FirebasePlayerRepository(playersCollectionRef);
 		this.teamRepository = new FirebaseTeamRepository(teamsCollectionRef);
+		this.substituteRepository = new FirebasePlayerRepository(substitutesCollectionRef);
+		this.highLeveledRepository = new FirebasePlayerRepository(highLevelCollecitonRef);
 	}
 };

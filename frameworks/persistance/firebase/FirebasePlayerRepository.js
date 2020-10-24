@@ -8,7 +8,7 @@ module.exports = class FirebasePlayerRepository extends PlayerRepository {
 
 	async register(player) {
 		try {
-			const res = await this.playerCollectionRef.doc(player.id).set({ nickname: player.nickname });
+			const res = await this.playerCollectionRef.doc(player.id).set({ nickname: player.nickname, level: player.level });
 			return res;
 		}
 		catch (error) {

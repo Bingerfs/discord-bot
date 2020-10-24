@@ -12,8 +12,8 @@ module.exports = (dependencies) => {
 			if(!message.member.roles.cache.some((role) => role.name === 'Dev')) return message.reply('You are not allowed to use this command');
 			const controller = TeamController(dependencies);
 			controller.shuffleTeams(args[0]).then((resShuffle)=> {
-				message.channel.send(resShuffle.message);
 				message.client.emit('teamsUpdated', message);
+				message.channel.send(resShuffle.message);
 			}, (error) => {
 				message.reply(error.message);
 			});
